@@ -14,8 +14,6 @@ const dummyProject = {
   pushed_at: null,
 };
 const API = "https://api.github.com";
-// const gitHubQuery = "/repos?sort=updated&direction=desc";
-// const specficQuerry = "https://api.github.com/repos/hashirshoaeb/";
 
 const Project = ({ heading, username, length, specfic }) => {
   const allReposAPI = `${API}/users/${username}/repos?sort=updated&direction=desc`;
@@ -31,6 +29,11 @@ const Project = ({ heading, username, length, specfic }) => {
     try {
       // getting all repos
       const response = await axios.get(allReposAPI);
+      // order by stargazers
+      response.data.sort((a, b) => {
+        return b.stargazers_count - a.stargazers_count;
+      })
+
       // slicing to the length
       repoList = [...response.data.slice(0, length)];
       // adding specified repos
