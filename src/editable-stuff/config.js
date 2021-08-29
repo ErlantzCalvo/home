@@ -43,7 +43,7 @@ const mainBody = {
 const about = {
   show: true,
   heading: "About Me",
-  imageLink: require("../editable-stuff/erlantzcalvo.jpg"),
+  imageLink: require("../editable-stuff/erlantzcalvo.webp"),
   imageSize: 275,
   message:
     "My name is Erlantz Calvo. I’m a graduate of 2021 from University of the Basque Country with a degree in Computer Science. I am passionate about all fields of computer science, but I am more focused on deep learning.",
