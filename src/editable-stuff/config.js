@@ -46,7 +46,7 @@ const about = {
   imageLink: require("../editable-stuff/erlantzcalvo.webp"),
   imageSize: 275,
   message:
-    "My name is Erlantz Calvo. I’m a graduate of 2021 from University of the Basque Country with a degree in Computer Science. I am passionate about all fields of computer science, but I am more focused on deep learning.",
+    "My name is Erlantz Calvo. I’m a graduate of 2021 from University of the Basque Country with a degree in Computer Science. I am passionate about all fields of computer science, currently working as fullstack developer.",
   resume: require("../editable-stuff/resume.pdf"),
 };
 
@@ -58,7 +58,7 @@ const about = {
 const repos = {
   show: true,
   heading: "Recent Projects",
-  gitHubUsername: "ErlantzCalvo", //i.e."johnDoe12Gh"
+  gitHubUsername: "ErlantzCalvo", 
   reposLength: 4,
   specificRepos: [],
 };

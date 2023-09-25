@@ -12,25 +12,23 @@ const ProjectCard = ({ value }) => {
     stargazers_count,
     languages_url,
     pushed_at,
+    is_private,
   } = value;
   return (
     <Col md={6}>
       <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
         <Card.Body>
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
-          <Card.Text>{(!description)?"":description || <Skeleton count={3} />} </Card.Text>
-          {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
+          <Card.Text className="project-description">{(!description)?"":description || <Skeleton count={3} />} </Card.Text>
+          {svn_url && !is_private && <CardButtons svn_url={svn_url} />}
+          {is_private && <CardUrl svn_url={svn_url}/>}
           <hr />
-          {languages_url ? (
+          {languages_url && (
             <Language languages_url={languages_url} repo_url={svn_url} />
-          ) : (
-            <Skeleton count={3} />
           )}
-          {value ? (
+          {value && !is_private && (
             <CardFooter star_count={stargazers_count} repo_url={svn_url} pushed_at={pushed_at} />
-          ) : (
-            <Skeleton />
-          )}
+          ) }
         </Card.Body>
       </Card>
     </Col>
@@ -48,6 +46,19 @@ const CardButtons = ({ svn_url }) => {
       </a>
       <a href={svn_url} target=" _blank" className="btn btn-outline-secondary">
         <i className="fab fa-github" /> Repo
+      </a>
+    </>
+  );
+};
+
+const CardUrl = ({ svn_url }) => {
+  return (
+    <>
+      <a
+        href={svn_url}
+        className="btn btn-outline-secondary mr-5"
+      >
+        <i className="fab fa-world" /> Visit project
       </a>
     </>
   );
