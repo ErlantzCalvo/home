@@ -4,16 +4,16 @@ import {
   navBar,
   mainBody,
   about,
+  projects,
   repos,
-  // leadership,
   skills,
   getInTouch,
-  // experiences
 } from "./editable-stuff/config.js";
 
 const MainBody = lazy(()=> import('./components/home/MainBody'))
 const AboutMe = lazy(()=> import('./components/home/AboutMe'))
-const Project = lazy(()=> import('./components/home/Project'))
+const Project = lazy(()=> import('./components/home/Project.jsx'))
+const Github = lazy(()=> import('./components/home/Github.jsx'))
 const Footer = lazy(()=> import('./components/Footer'))
 const Navbar = lazy(()=> import('./components/Navbar'))
 const Skills = lazy(()=> import('./components/home/Skills'))
@@ -38,8 +38,15 @@ const Home = React.forwardRef((props, ref) => {
           resume={about.resume}
         />
       )}
-      {repos.show && (
+      {projects.show && (
         <Project
+          heading={projects.heading}
+          // length={projects.reposLength}
+          projects={projects.projectsDetails}
+        />
+      )}
+      {repos.show && (
+        <Github
           heading={repos.heading}
           username={repos.gitHubUsername}
           length={repos.reposLength}
