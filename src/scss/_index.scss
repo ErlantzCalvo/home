@@ -122,3 +122,13 @@ code {
 .project-description {
   white-space: break-spaces;
 }
+
+.silent-link {
+  color: unset;
+  &:hover {
+    text-decoration: none;
+    color: unset;
+  }
+}
+
+
