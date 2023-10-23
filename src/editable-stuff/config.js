@@ -52,15 +52,23 @@ const about = {
 
 const projects = {
   show: true,
-  heading: "Projects", 
+  heading: "Live Projects", 
   projectsDetails: [
     {
       name: "HayQueVivir",
       url: "https://hay-que-vivir.vercel.app",
       image: "HayQueVivir.jpg",
       stack: ["Go", "Next.js", "Tailwind", "Firebase"],
-      description: "Follow the house prices in the different provinces of Spain with daily updated prices.",
-      technical_details: "This project is separated into two different parts:\n\nOn the one hand there is a process made with Golang that is in charge of obtaining the statistics of the daily house prices as well as the Euribor. Both data are obtained through the use of webscraping and are stored in Firestore.\nOn the other hand, there is the web that users see, which is a web application created with Next.js that obtains the data saved by the webscraper in Firestore."
+      description: "Keep track of house prices in the different provinces of Spain with daily updated prices.",
+      technical_details: "This project is separated into two different parts:\nOn the one hand there is a process made with Golang that is in charge of obtaining the statistics of the daily house prices as well as the Euribor. Both data are obtained through the use of webscraping and are stored in Firestore.\nOn the other hand, there is the web that users see, which is a web application created with Next.js that obtains the data saved by the webscraper in Firestore.\nNote: Since this website is intended for use by Spaniards, it has not been translated into other languages."
+    },
+    {
+      name: "F1-corner",
+      url: "https://f1-corner-iota.vercel.app",
+      image: "F1-corner.jpg",
+      stack: ["Astro"],
+      description: "Keep up to date with the formula 1 results",
+      technical_details: "This website has been built with the Astro web framework in order to create the best possible user experience.\nIt is a completely static web page, which means that it does not load content dynamically. so you may ask, how do you keep your content up to date?\nIf you follow the F1, you may know that all races are held on Sundays so, via a Github action, the page is built every Monday after a race.Although I already knew that this is not the best way to create a web page that consumes dynamic content from an API, the idea was to create a completely static page without the need to load any content."
     }
   ],
 };

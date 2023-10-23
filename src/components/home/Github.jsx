@@ -48,7 +48,6 @@ const Github = ({ heading, username, length, specfic }) => {
       }
       // setting projectArray
       // TODO: remove the duplication.
-      console.log(repoList)
       setProjectsArray(repoList);
     } catch (error) {
       console.error(error.message);
